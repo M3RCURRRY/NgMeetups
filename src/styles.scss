@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1E1E1E;
+  color: white;
+}
+
+@font-face {
+  font-family: SansHebrewRegular;
+  src: url(assets/OpenSansHebrewCondensed-Regular.ttf);
+}
+
+@font-face {
+  font-family: SansHebrewBold;
+  src: url(assets/OpenSansHebrewCondensed-Bold.ttf);
+}
