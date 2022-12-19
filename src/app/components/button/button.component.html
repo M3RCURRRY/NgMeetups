@@ -1,0 +1,4 @@
+<button [ngClass]="{
+  'reversed-button': toggled,
+  'custom-button': !toggled
+}" class="custom-button" (click)="clickHandler()">{{ toggled ? alt : text }}</button>
