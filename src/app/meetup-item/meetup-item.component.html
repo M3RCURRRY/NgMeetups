@@ -1,0 +1,40 @@
+<section class="meetup-item">
+  <div class="meetup-item__content">
+    <div class="meetup-item__content-left">
+      <span class="meetup-item__header">
+        <span class="meetup-item__name">{{ data.name }}</span>
+        <span class="meetup-item__subs">Подписчики: {{ data.users.length }}</span>
+      </span>
+      <p class="meetup-item__description">{{ data.description }}</p>
+      <div *ngIf="isExpanded" class="meetup-item__expanded-info">
+        <h4>Целевая аудитория</h4>
+        <p>{{ data.target_audience }}</p>
+        <h4>Что надо знать?</h4>
+        <p>{{ data.need_to_know }}</p>
+        <h4>Что будет?</h4>
+        <p>{{ data.will_happen }}</p>
+        <h4>Почему надо обязательно прийти?</h4>
+        <p>{{ data.reason_to_come }}</p>
+      </div>
+    </div>
+    <div class="meetup-item__content-right">
+      <h2>{{ data.time | date:'dd.MM.yy hh:mm' }}</h2>
+      <span class="meetup-item__location">{{ data.location }}</span>
+    </div>
+  </div>
+
+  <div class="meetup-item__footer">
+    <div class="meetup-item__owner">
+      <img src="assets/owner.png" alt="Meetup owner">
+      <span>{{ data.owner.fio }}</span>
+    </div>
+    <div class="meetup-item__controls">
+      <app-button *ngIf="isEditButton" (onClick)="null" text="Редактировать"></app-button>
+      <app-button *ngIf="!isEditButton" (onClick)="subscribeHandler()" [toggled]="isSubscribed" text="Я пойду!" alt="Не смогу прийти"></app-button>
+      <button (click)="expandHandler()" class="expand-toggler">
+        <img *ngIf="!isExpanded" src="assets/show.png" alt="Expand">
+        <img *ngIf="isExpanded" src="assets/hide.png" alt="Hide">
+      </button>
+    </div>
+  </div>
+</section>
