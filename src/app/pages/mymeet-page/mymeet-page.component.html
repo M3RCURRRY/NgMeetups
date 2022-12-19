@@ -1,0 +1,4 @@
+<div class="my-meetups-container">
+  <app-meetup-item [isEditButton]="true" *ngFor="let meetup of allMeetups | filterMine:userId
+  userId" [data]="meetup"></app-meetup-item>
+</div>
