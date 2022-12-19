@@ -14,3 +14,18 @@ body {
   font-family: SansHebrewBold;
   src: url(assets/OpenSansHebrewCondensed-Bold.ttf);
 }
+
+@font-face {
+  font-family: CherryBomb;
+  src: url(assets/CherryBomb-Regular.ttf);
+}
+
+:root {
+  --default-color: #2C2C2C;
+  --primary-color: #B4B4C0;
+  --secondary-color: #4C3F78;
+  --info-color: #008697;
+  --accent-color: #B85526;
+  --background-color: #1E1E1E;
+  --bold-color: #E9E9E9;
+}
