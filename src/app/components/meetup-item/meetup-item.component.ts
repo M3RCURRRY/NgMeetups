@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
-import { MeetupsService } from '../services/meetups.service';
-import { IMeetupData } from '../types';
+import { AuthService } from '../../services/auth.service';
+import { MeetupsService } from '../../services/meetups.service';
+import { IMeetupData } from '../../types';
 
 @Component({
   selector: 'app-meetup-item',

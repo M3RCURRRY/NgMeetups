@@ -1,0 +1,68 @@
+.form-grid {
+  max-width: 80%;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+.meetup-form-input {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 18px;
+
+  background-color: var(--default-color);
+  outline: 2px solid var(--secondary-color);
+  color: white;
+
+  border-radius: 4px;
+  border: none;
+}
+
+.meetup-form-input:focus {
+  outline: 2px solid var(--accent-color);
+}
+
+.form-grid > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-grid__label {
+  grid-column: 1;
+}
+
+.form-grid__form-header {
+  grid-row: 1;
+  grid-column: 2 / 6;
+  font-size: 24px;
+}
+
+.form-grid__first-label {
+  grid-row: 2;
+}
+
+.form-grid__first-input {
+  grid-column: 2 / 4;
+  grid-row: 2;
+}
+
+.form-grid__second-label {
+  grid-row: 3;
+}
+
+.form-grid__second-input {
+  grid-row: 3;
+  grid-column: 2;
+}
+
+.form-grid__third-label {
+  grid-column: 3;
+  grid-row: 3;
+}

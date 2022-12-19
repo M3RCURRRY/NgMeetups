@@ -10,8 +10,8 @@ import { HowtoPageModule } from './pages/howto-page/howto-page.module';
 import { AllmeetPageModule } from './pages/allmeet-page/allmeet-page.module';
 import { JwtInterceptor } from './shared/interceptors/jwt.interceptor';
 import { MymeetPageModule } from './pages/mymeet-page/mymeet-page.module';
-import { FilterMinePipe } from './shared/pipes/filter-mine/filter-mine.pipe';
-import { FilterMeetupsPipe } from './shared/pipes/filter-meetups/filter-meetups.pipe';
+import { EditorPageModule } from './pages/editor-page/editor-page.module';
+import { CreatorPageModule } from './pages/creator-page/creator-page.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,9 @@ import { FilterMeetupsPipe } from './shared/pipes/filter-meetups/filter-meetups.
     AuthPageModule,
     HowtoPageModule,
     AllmeetPageModule,
-    MymeetPageModule
+    MymeetPageModule,
+    EditorPageModule,
+    CreatorPageModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }

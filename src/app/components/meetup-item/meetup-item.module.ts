@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MeetupItemComponent } from './meetup-item.component';
-import { ButtonModule } from '../components/button/button.module';
+import { ButtonModule } from '../button/button.module';
 
 
 
