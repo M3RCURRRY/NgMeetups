@@ -1,1 +1,19 @@
-<p>auth-page works!</p>
+<div class="auth-page-container">
+  <div *ngIf="isFailed" class="auth-failed">
+    Ошибка авторизации, попробуйте ещё раз
+  </div>
+  <form class="auth-form" [formGroup]="authForm">
+    <label for="email">
+      <input class="auth-input" type="text" id="email" formControlName="email" placeholder="Login" required>
+    </label>
+    <br><br>
+    <label for="password">
+      <input class="auth-input" type="password" id="password" formControlName="password" placeholder="Password">
+    </label>
+    <br><br>
+    <div class="auth-form__buttons">
+      <span class="how-to-button" (click)="howToHandler()">How to create account?</span>
+      <app-button (onClick)="authHandler()" text="Submit"></app-button>
+    </div>
+  </form>
+</div>
