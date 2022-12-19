@@ -7,14 +7,15 @@
     </div>
   </div>
   <nav>
-    <ul class="header-layout__routes">
-      <li>Все митапы</li>
-      <li>Мои митапы</li>
-      <li>Пользователи</li>
+    <ul *ngIf="authStatus" class="header-layout__routes">
+      <li (click)="travelHandler('all-meetups')">Все митапы</li>
+      <li (click)="travelHandler('my-meetups')">Мои митапы</li>
+      <li *ngIf="adminStatus">Пользователи</li>
     </ul>
   </nav>
   <div class="header-layout__auth-icons">
-    <img src="assets/settings.png" alt="Настройки">
-    <img src="assets/auth.png" alt="Авторизация">
+    <img *ngIf="authStatus" (click)="settingsHandler()" src="assets/settings.png" alt="Настройки">
+    <img *ngIf="authStatus" (click)="logoutHandler()" src="assets/logout.png" alt="Выйти">
+    <img *ngIf="!authStatus" (click)="signInHandler()" src="assets/login.png" alt="Авторизация">
   </div>
 </header>
