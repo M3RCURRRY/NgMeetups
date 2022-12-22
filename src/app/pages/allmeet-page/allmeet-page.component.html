@@ -1,3 +1,9 @@
 <div class="all-meetups-container">
-  <app-meetup-item [isEditButton]="false" *ngFor="let meetup of allMeetups" [data]="meetup"></app-meetup-item>
+  <div class="allmeet-action-container">
+    <form [formGroup]="filterForm">
+      <input type="text" class="allmeet-search-input" name="searchValue" formControlName="searchValue" placeholder="Введите название митапа">
+    </form>
+    <app-button (click)="createMeetupHandler()" text="Создать митап"></app-button>
+  </div>
+  <app-meetup-item [isEditButton]="false" *ngFor="let meetup of allMeetups | filterMeetups:filter" [data]="meetup"></app-meetup-item>
 </div>
