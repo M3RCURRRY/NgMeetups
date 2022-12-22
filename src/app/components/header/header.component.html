@@ -10,7 +10,7 @@
     <ul *ngIf="authStatus" class="header-layout__routes">
       <li (click)="travelHandler('all-meetups')">Все митапы</li>
       <li (click)="travelHandler('my-meetups')">Мои митапы</li>
-      <li *ngIf="adminStatus">Пользователи</li>
+      <li *ngIf="adminStatus" (click)="travelHandler('users-list')">Пользователи</li>
     </ul>
   </nav>
   <div class="header-layout__auth-icons">
