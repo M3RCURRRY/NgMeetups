@@ -23,7 +23,7 @@ interface IUserRole {
 }
 
 interface IMeetupData {
-  id: number;
+  id?: number;
   name: string;
   description: string;
   location: string;
@@ -33,9 +33,9 @@ interface IMeetupData {
   reason_to_come: string;
   time: string;
   duration: number;
-  createdBy: number;
-  owner: IUserDesc;
-  users: IUserDesc[];
+  createdBy?: number;
+  owner?: IUserDesc;
+  users?: IUserDesc[];
 }
 
 interface IUserDesc {
@@ -43,6 +43,15 @@ interface IUserDesc {
   email: string;
   password: string;
   fio: string;
+}
+
+interface IUserData {
+  id: number;
+  email: string;
+  password: string;
+  fio: string;
+  createdAt: string;
+  roles: IRole[];
 }
 
 export { IUserData, IRole, IUserRole, IMeetupData, IUserDesc }
