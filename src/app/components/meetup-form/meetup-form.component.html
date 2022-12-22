@@ -1,15 +1,83 @@
+<div class="meetup-form-failed" *ngIf="isFailed">Форма заполнена некорректно!<br>Обратите внимание на поля, выделенные красным</div>
 <form class="form-grid" [formGroup]="meetupForm">
-  <div class="form-grid__form-header">Редактирование митапа</div>
-  <div class="form-grid__label form-grid__first-label">
+  <div class="form-grid__form-header">{{ formName }}</div>
+  <div class="form-grid__label form-grid__name-label">
     <label for="name">Название:</label>
   </div>
-  <div class="form-grid__first-input">
+  <div class="form-grid__name-input">
     <input class="meetup-form-input" type="text" name="name" formControlName="name">
   </div>
-  <div class="form-grid__second-label">
+
+  <div class="form-grid__date-label">
     <label for="date">Дата:</label>
   </div>
-  <div class="form-grid__second-input">
-    <input class="meetup-form-input" type="text" name="name" formControlName="name">
+  <div class="form-grid__date-input">
+    <input class="meetup-form-input" type="date" name="date" formControlName="date">
+  </div>
+
+  <div class="form-grid__time-label">
+    <label for="time">Время:</label>
+  </div>
+  <div class="form-grid__time-input">
+    <input class="meetup-form-input" type="time" name="time" formControlName="time">
+  </div>
+
+  <div class="form-grid__label form-grid__location-label">
+    <label for="location">Место проведения</label>
+  </div>
+  <div class="form-grid__location-input">
+    <input class="meetup-form-input" type="text" name="location" formControlName="location">
+  </div>
+
+  <div class="form-grid__duration-label">
+    <label for="description">Продолжительность</label>
+  </div>
+  <div class="form-grid__duration-input">
+    <input class="meetup-form-input" type="text" name="duration" formControlName="duration">
+  </div>
+
+  <div class="form-grid__description-label">
+    <label for="description">Описание</label>
+  </div>
+  <div class="form-grid__description-input">
+    <input class="meetup-form-input" type="text" name="description" formControlName="description">
+  </div>
+
+  <div class="form-grid__target-label">
+    <label for="target_audience">Целевая аудитория</label>
+  </div>
+  <div class="form-grid__target-input">
+    <input class="meetup-form-input" type="text" name="target_audience" formControlName="target_audience">
+  </div>
+
+  <div class="form-grid__need-label">
+    <label for="need_to_know">Что надо знать?</label>
+  </div>
+  <div class="form-grid__need-input">
+    <input class="meetup-form-input" type="text" name="need_to_know" formControlName="need_to_know">
+  </div>
+
+  <div class="form-grid__will-label">
+    <label for="will_happen">Что будет?</label>
+  </div>
+  <div class="form-grid__will-input">
+    <input class="meetup-form-input" type="text" name="will_happen" formControlName="will_happen">
+  </div>
+
+  <div class="form-grid__reason-label">
+    <label for="reason_to_come">Почему надо обязательно прийти?</label>
+  </div>
+  <div class="form-grid__reason-input">
+    <input class="meetup-form-input" type="text" name="reason_to_come" formControlName="reason_to_come">
+  </div>
+
+  <div class="form-grid__delete-button">
+    <button class="delete-button" (click)="deleteHandler(); false" *ngIf="meetupData">Удалить</button>
+  </div>
+  <div class="form-grid__cancel-button">
+    <button class="cancel-button" (click)="cancelHandler(); false">Отмена</button>
+  </div>
+  <div class="form-grid__submit-button">
+    <button class="submit-button" type="submit" (click)="submitHandler(); false">Сохранить</button>
   </div>
 </form>

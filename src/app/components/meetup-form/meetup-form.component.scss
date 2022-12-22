@@ -24,6 +24,25 @@
   border: none;
 }
 
+.meetup-form-failed {
+  margin: 0 auto;
+  text-align: center;
+  width: fit-content;
+
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
+  padding: 10px 5px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+
+  font-family: sans-serif;
+  color: var(--bold-color);
+}
+
+input.ng-invalid {
+  outline: 1px solid #eb344f;
+}
+
 .meetup-form-input:focus {
   outline: 2px solid var(--accent-color);
 }
@@ -44,25 +63,145 @@
   font-size: 24px;
 }
 
-.form-grid__first-label {
+.form-grid__name-label {
   grid-row: 2;
 }
 
-.form-grid__first-input {
+.form-grid__name-input {
   grid-column: 2 / 4;
   grid-row: 2;
 }
 
-.form-grid__second-label {
+.form-grid__date-label {
   grid-row: 3;
 }
 
-.form-grid__second-input {
+.form-grid__date-input {
   grid-row: 3;
   grid-column: 2;
 }
 
-.form-grid__third-label {
+.form-grid__time-label {
   grid-column: 3;
   grid-row: 3;
+}
+
+.form-grid__time-input {
+  grid-row: 3;
+  grid-column: 4;
+}
+
+.form-grid__duration-label {
+  grid-column: 5;
+  grid-row: 3;
+}
+
+.form-grid__duration-input {
+  grid-row: 3;
+  grid-column: 6 / 7;
+}
+
+.form-grid__location-label {
+  grid-row: 4;
+}
+
+.form-grid__location-input {
+  grid-row: 4;
+  grid-column: 2 / 4;
+}
+
+.form-grid__description-label {
+  grid-row: 5;
+}
+
+.form-grid__description-input {
+  grid-row: 5;
+  grid-column: 2 / 7;
+}
+
+.form-grid__target-label {
+  grid-row: 6;
+}
+
+.form-grid__target-input {
+  grid-row: 6;
+  grid-column: 2 / 7;
+}
+
+.form-grid__need-label {
+  grid-row: 7;
+}
+
+.form-grid__need-input {
+  grid-row: 7;
+  grid-column: 2 / 7;
+}
+
+.form-grid__will-label {
+  grid-row: 8;
+}
+
+.form-grid__will-input {
+  grid-row: 8;
+  grid-column: 2 / 7;
+}
+
+.form-grid__reason-label {
+  grid-row: 9;
+}
+
+.form-grid__reason-input {
+  grid-row: 9;
+  grid-column: 2 / 7;
+}
+
+.form-grid__delete-button,
+.form-grid__cancel-button,
+.form-grid__submit-button {
+  grid-row: 10;
+}
+
+.form-grid__delete-button {
+  grid-column: 4;
+}
+
+.form-grid__cancel-button {
+  grid-column: 5;
+}
+
+.form-grid__submit-button {
+  grid-column: 6;
+}
+
+.delete-button,
+.cancel-button,
+.submit-button {
+  border: none;
+  color: var(--bold-color);
+  font-size: 18px;
+  box-shadow: 0px 4px 4px rgba(62, 5, 4, 0.25);
+  border-radius: 5px;
+  padding: 12px 40px;
+
+  transition: transform 0.1s ease-in-out;
+}
+
+.delete-button:hover,
+.cancel-button:hover,
+.submit-button:hover {
+  transform: translate(0, -2px);
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: var(--accent-color);
+}
+
+.cancel-button {
+  background-color: var(--bold-color);
+  color: var(--secondary-color);
+}
+
+.submit-button {
+  background-color: var(--secondary-color);
 }
