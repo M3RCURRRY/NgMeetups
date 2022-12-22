@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { MeetupsService } from '../../services/meetups.service';
-import { IMeetupData } from '../../types';
+import { IMeetupData, IUserDesc } from '../../types';
 
 @Component({
   selector: 'app-meetup-item',
@@ -20,15 +21,15 @@ export class MeetupItemComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private meetupService: MeetupsService
+    private meetupService: MeetupsService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     let flag = false;
-    for (let participants of this.data.users) {
+    for (let participants of this.data.users as IUserDesc[]) {
       if (participants.id === this.authService.userData.id) {
         flag = true;
-        // this.isSubscribed = true;
         break;
       }
     }
@@ -39,12 +40,12 @@ export class MeetupItemComponent implements OnInit {
   subscribeHandler() {
     if (!this.isSubscribed) {
       this.meetupService.subscribeToMeetup(
-        this.data.id,
+        this.data.id as number,
         this.authService.userData.id
       );
     } else {
       this.meetupService.unsubscribeFromMeetup(
-        this.data.id,
+        this.data.id as number,
         this.authService.userData.id
       );
     }
@@ -52,5 +53,10 @@ export class MeetupItemComponent implements OnInit {
 
   expandHandler() {
     this.isExpanded = !this.isExpanded;
+  }
+
+  editMeetupHandler() {
+    this.meetupService.setCurrentMeetup(this.data);
+    this.router.navigate(['edit-meetup']);
   }
 }
