@@ -12,7 +12,7 @@ export class FilterMeetupsPipe implements PipeTransform {
   transform(data: IMeetupData[], filter: string): IMeetupData[] {
     if (!data || !filter) return data;
 
-    return data.filter(value => value.owner.id === +filter);
+    return data.filter(value => (value.name + ' ' + value.description).toLowerCase().indexOf(filter.toLowerCase()) !== -1);
   }
 
 }
