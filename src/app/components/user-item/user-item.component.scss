@@ -1,3 +1,8 @@
+.user-item-layout {
+  display: flex;
+  flex-direction: column;
+}
+
 .user-item-container {
   display: flex;
   flex-direction: row;
@@ -21,4 +26,39 @@
 
 .user-item-controls > * {
   margin: 5px;
+}
+
+.edit-user-failed {
+  margin: 0 auto;
+  margin-top: 10px;
+  width: fit-content;
+
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
+  padding: 10px 5px;
+  margin-bottom: 15px;
+
+  font-family: sans-serif;
+  color: var(--bold-color);
+}
+
+.user-editor-container {
+  margin: 10px auto;
+  width: fit-content;
+}
+
+.user-data-input {
+  padding: 12px 20px;
+  font-size: 18px;
+
+  background-color: var(--default-color);
+  color: white;
+
+  border-radius: 4px;
+  border: none;
+  margin-right: 10px;
+}
+
+.user-data-input:focus {
+  outline: 2px solid var(--secondary-color);
 }

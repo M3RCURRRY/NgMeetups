@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserItemComponent } from './user-item.component';
 import { ButtonModule } from '../button/button.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -11,7 +12,9 @@ import { ButtonModule } from '../button/button.module';
   ],
   imports: [
     CommonModule,
-    ButtonModule
+    ButtonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     UserItemComponent

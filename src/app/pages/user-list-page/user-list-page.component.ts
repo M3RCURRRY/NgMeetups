@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { UserService } from 'src/app/services/user.service';
 import { IUserData } from 'src/app/types';
 import { authEnviroment } from 'src/enviroment/enviroment';
 
@@ -12,12 +13,11 @@ import { authEnviroment } from 'src/enviroment/enviroment';
 
 export class UserListPageComponent implements OnInit {
 
-  userData: BehaviorSubject<IUserData[]> = new BehaviorSubject<IUserData[]>([]);
+  userData!: IUserData[];
 
-  constructor (private http: HttpClient) { }
+  constructor (private http: HttpClient, private userService: UserService) { }
 
   ngOnInit(): void {
-    this.http.get<IUserData[]>(`${authEnviroment.backendOrigin}/user`)
-    .subscribe(data => this.userData.next(data));
+    this.userService.users.subscribe(data => this.userData = data);
   }
 }

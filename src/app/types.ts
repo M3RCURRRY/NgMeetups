@@ -54,4 +54,10 @@ interface IUserData {
   roles: IRole[];
 }
 
-export { IUserData, IRole, IUserRole, IMeetupData, IUserDesc }
+interface MutableUserData {
+  email: string;
+  password: string;
+  fio: string;
+}
+
+export { IUserData, IRole, IUserRole, IMeetupData, IUserDesc, MutableUserData }

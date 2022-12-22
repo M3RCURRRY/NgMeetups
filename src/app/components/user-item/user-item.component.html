@@ -1,9 +1,20 @@
-<div class="user-item-container">
-  <div class="user-item-cell">{{ data.email }}</div>
-  <div class="user-item-cell">{{ data.fio }}</div>
-  <div class="user-item-cell">ID: {{ data.id }}</div>
-  <div class="user-item-controls">
-    <app-button (click)="deleteUserHandler()" text="Удалить"></app-button>
-    <app-button (click)="toggleEditor()" text="Изменить"></app-button>
+<div class="user-item-layout">
+  <div class="user-item-container">
+    <div class="user-item-cell">{{ data.email }}</div>
+    <div class="user-item-cell">{{ data.fio }}</div>
+    <div class="user-item-cell">ID: {{ data.id }}</div>
+    <div class="user-item-controls">
+      <app-button (click)="deleteUserHandler()" text="Удалить"></app-button>
+      <app-button (click)="toggleEditor()" text="Изменить"></app-button>
+    </div>
   </div>
+  <div class="user-editor-container" *ngIf="isEditorToggled">
+    <form class="user-editor-form" [formGroup]="userForm">
+      <input class="user-data-input" type="text" name="email" formControlName="email" placeholder="Почта пользователя">
+      <input class="user-data-input" type="text" name="password" formControlName="password" placeholder="Пароль пользователя">
+      <input class="user-data-input" type="text" name="fio" formControlName="fio" placeholder="Имя пользователя">
+      <app-button (click)="editUserHandler(); false" text="Применить изменения"></app-button>
+    </form>
+  </div>
+  <div class="edit-user-failed" *ngIf="isFailed">Нельзя редактировать свою учётную запись</div>
 </div>
