@@ -1,0 +1,9 @@
+<div class="user-item-container">
+  <div class="user-item-cell">{{ data.email }}</div>
+  <div class="user-item-cell">{{ data.fio }}</div>
+  <div class="user-item-cell">ID: {{ data.id }}</div>
+  <div class="user-item-controls">
+    <app-button (click)="deleteUserHandler()" text="Удалить"></app-button>
+    <app-button (click)="toggleEditor()" text="Изменить"></app-button>
+  </div>
+</div>
