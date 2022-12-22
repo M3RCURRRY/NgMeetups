@@ -12,6 +12,7 @@ import { JwtInterceptor } from './shared/interceptors/jwt.interceptor';
 import { MymeetPageModule } from './pages/mymeet-page/mymeet-page.module';
 import { EditorPageModule } from './pages/editor-page/editor-page.module';
 import { CreatorPageModule } from './pages/creator-page/creator-page.module';
+import { UserListPageModule } from './pages/user-list-page/user-list-page.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CreatorPageModule } from './pages/creator-page/creator-page.module';
     AllmeetPageModule,
     MymeetPageModule,
     EditorPageModule,
-    CreatorPageModule
+    CreatorPageModule,
+    UserListPageModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
