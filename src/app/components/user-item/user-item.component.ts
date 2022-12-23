@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { BehaviorSubject } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
-import { IUserData } from 'src/app/types';
+import { IRole, IUserData } from 'src/app/types';
 
 @Component({
   selector: 'app-user-item',
@@ -25,10 +26,15 @@ export class UserItemComponent implements OnInit {
   @Input()
   data!: IUserData;
 
+  currentRoles: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
+
   isEditorToggled: boolean = false;
   isFailed: boolean = false;
 
   ngOnInit(): void {
+    this.currentRoles.next(this.data.roles.map(r => {
+      return r.name;
+    }))
     this.initForm();
   }
 
@@ -50,19 +56,6 @@ export class UserItemComponent implements OnInit {
     }
 
     this.isEditorToggled = !this.isEditorToggled;
-  }
-
-  editUserHandler() {
-    if (this.userForm.invalid) {
-      return;
-    }
-
-    this.userSerive.updateUser(this.data.id, {
-      email: this.userForm.value.email as string,
-      password: this.userForm.value.password as string,
-      fio: this.userForm.value.fio as string,
-    });
-    this.isEditorToggled = false;
   }
 
   deleteUserHandler() {

@@ -35,8 +35,12 @@ export class UserService {
   updateUser(id: number, newData: MutableUserData) {
     this.http.put(`${authEnviroment.backendOrigin}/user/${id}`, {
       ...newData
-    }).subscribe();
+    }).subscribe(() => this.fetch());
+  }
 
-    this.fetch();
+  createUser(newData: MutableUserData) {
+    this.http.post(`${authEnviroment.backendOrigin}/auth/registration`, {
+      ...newData
+    }).subscribe(() => this.fetch());
   }
 }

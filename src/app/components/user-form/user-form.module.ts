@@ -1,20 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserItemComponent } from './user-item.component';
+import { UserFormComponent } from './user-form.component';
 import { ButtonModule } from '../button/button.module';
-import { UserFormModule } from '../user-form/user-form.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
-    UserItemComponent,
+    UserFormComponent
   ],
   imports: [
     CommonModule,
     ButtonModule,
-    UserFormModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
-    UserItemComponent
+    UserFormComponent
   ]
 })
-export class UserItemModule { }
+export class UserFormModule { }

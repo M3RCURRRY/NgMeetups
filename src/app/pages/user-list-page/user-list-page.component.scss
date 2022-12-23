@@ -8,3 +8,16 @@
   padding-right: 20px;
   margin-top: 40px;
 }
+
+.user-list-page-container__create-form-container {
+  max-width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-list-page-container__create-form-container > * {
+  margin: 10px;
+}

@@ -1,0 +1,30 @@
+<form [formGroup]="userForm">
+  <span class="user-form-failed" *ngIf="isFailed">Некорректно заполненная форма</span>
+  <div class="user-editor-form__controls-layout">
+    <input
+      class="user-data-input"
+      type="text"
+      name="email"
+      formControlName="email"
+      placeholder="Почта пользователя"
+      autocomplete="off"
+    />
+    <input
+      class="user-data-input"
+      type="password"
+      name="password"
+      formControlName="password"
+      placeholder="Пароль пользователя"
+      autocomplete="off"
+    />
+    <input
+      class="user-data-input"
+      type="text"
+      name="fio"
+      formControlName="fio"
+      placeholder="Имя пользователя"
+      autocomplete="off"
+    />
+    <button class="custom-button" (click)="submitHandler(); false">Сохранить</button>
+  </div>
+</form>

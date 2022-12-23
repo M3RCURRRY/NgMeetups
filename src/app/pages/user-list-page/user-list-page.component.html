@@ -1,3 +1,7 @@
 <div class="user-list-page-container">
-  <app-user-item *ngFor="let udata of userData" [data]="udata"></app-user-item>
+  <div class="user-list-page-container__create-form-container">
+    <app-button (onClick)="toggleCreateForm()" text="Создать пользователя"></app-button>
+    <app-user-form (hideForm)="toggleCreateForm()" (submitEmmiter)="submitNewUser($event)" *ngIf="isToggled"></app-user-form>
+  </div>
+  <app-user-item *ngFor="let udata of userData.value" [data]="udata"></app-user-item>
 </div>
